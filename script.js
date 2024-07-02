@@ -360,6 +360,10 @@ let totalYearsLived = 0
 
 Banner('Bonus 1');
 
+totalYearsLived = inventors.reduce(function(totalYearsLived,inventor){
+    return totalYearsLived + (inventor.passed - inventor.year);
+}, 0)
+
 // Check your return value:
 console.log('Bonus 1 My Result: ', totalYearsLived)
 console.log('Bonus 1 Correct Result: ', 861)
@@ -377,6 +381,16 @@ console.log('Bonus 1 Correct Result: ', 861)
 
 
 let travelMethodCounts = {}
+
+travelMethodCounts = travelMethods.reduce(function(sum,travelMethod){
+    if(sum.hasOwnProperty(travelMethod)){
+        sum[travelMethod]++;
+    }
+    else{
+        sum[travelMethod] = 1;
+    }
+    return sum;
+},{});
 
 // Enter your solution code here:
 
